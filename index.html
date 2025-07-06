@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VIU Premium - 3 Bulan Hanya 20.000</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+        
+        * {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        
+        .viu-gradient {
+            background: linear-gradient(135deg, #FF6B6B 0%, #4ECDC4 50%, #45B7D1 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 0 5px rgba(255,255,255,0.3);
+        }
+        
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        
+        .pulse-animation {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+        
+        .floating {
+            animation: floating 3s ease-in-out infinite;
+        }
+        
+        @keyframes floating {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        .fade-in {
+            animation: fadeIn 1s ease-in;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .whatsapp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 30px;
+            right: 30px;
+            background-color: #25D366;
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            font-size: 24px;
+            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+            z-index: 1000;
+            animation: bounce 2s infinite;
+        }
+        
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        .price-badge {
+            background: linear-gradient(45deg, #FF6B6B, #4ECDC4);
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+        
+        @keyframes glow {
+            from { box-shadow: 0 0 20px rgba(255, 107, 107, 0.5); }
+            to { box-shadow: 0 0 30px rgba(78, 205, 196, 0.8); }
+        }
+        
+        .hero-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-bg::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><polygon fill="%23ffffff08" points="0,0 1000,300 1000,1000 0,700"/></svg>');
+            background-size: cover;
+        }
+        
+        .feature-card {
+            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+    </style>
+</head>
+<body class="min-h-screen bg-gray-50">
+    <!-- WhatsApp Float Button -->
+    <a href="https://wa.me/6283874636450?text=Halo%20saya%20tertarik%20dengan%20VIU%20Premium%203%20bulan%20seharga%2020.000" 
+       class="whatsapp-float flex items-center justify-center" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Hero Section -->
+    <section class="hero-bg text-white relative">
+        <div class="container mx-auto px-4 py-20">
+            <div class="text-center relative z-10">
+                <div class="fade-in">
+                    <img src="https://i.postimg.cc/FdcnBScJ/images.png" alt="Official VIU streaming service logo with distinctive brand typography" class="mx-auto mb-8 floating">
+                    <h1 class="text-5xl md:text-7xl font-bold mb-4">
+                        VIU <span class="viu-gradient">Premium</span>
+                    </h1>
+                    <p class="text-xl md:text-2xl mb-8 text-gray-200">
+                        Streaming Tanpa Batas, Hiburan Berkualitas Premium
+                    </p>
+                </div>
+                
+                <div class="price-badge text-white p-8 rounded-3xl inline-block mb-8 pulse-animation">
+                    <div class="text-6xl font-bold mb-2">Rp 20.000</div>
+                    <div class="text-xl">3 Bulan Premium + Garansi</div>
+                    <div class="text-sm opacity-80 line-through">Harga Normal: Rp 89.000</div>
+                </div>
+                
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="https://wa.me/6283874636450?text=Halo%20saya%20tertarik%20dengan%20VIU%20Premium%203%20bulan%20seharga%2020.000" 
+                       class="bg-green-500 hover:bg-green-600 text-white px-8 py-4 rounded-full text-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-xl">
+                        <i class="fab fa-whatsapp mr-2"></i>
+                        Pesan Sekarang
+                    </a>
+                    <button onclick="scrollToFeatures()" class="bg-transparent border-2 border-white text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-white hover:text-purple-600 transition-all duration-300">
+                        Lihat Paket
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-16 text-gray-800">
+                Kenapa Pilih VIU Premium?
+            </h2>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="feature-card p-8 rounded-3xl card-hover text-center">
+                    <div class="viu-gradient w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-play text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-semibold mb-4 text-gray-800">Streaming Tanpa Iklan</h3>
+                    <p class="text-gray-600">Nikmati konten favorit tanpa gangguan iklan yang mengganggu pengalaman menonton Anda.</p>
+                </div>
+                
+                <div class="feature-card p-8 rounded-3xl card-hover text-center">
+                    <div class="viu-gradient w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-download text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-semibold mb-4 text-gray-800">Download Offline</h3>
+                    <p class="text-gray-600">Download konten favorit dan tonton kapan saja, di mana saja tanpa koneksi internet.</p>
+                </div>
+                
+                <div class="feature-card p-8 rounded-3xl card-hover text-center">
+                    <div class="viu-gradient w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-hd-video text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-semibold mb-4 text-gray-800">Kualitas HD</h3>
+                    <p class="text-gray-600">Streaming dengan kualitas video hingga 1080p untuk pengalaman menonton yang maksimal.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Content Preview Section -->
+    <section class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-16 text-gray-800">
+                Konten Premium Terlengkap
+            </h2>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="bg-white rounded-2xl overflow-hidden shadow-lg card-hover">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/5553b535-f701-489c-81a5-db5edfda8161.png" alt="Korean drama poster showing romantic couple in traditional and modern Korean setting with cherry blossoms" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="font-semibold text-lg mb-2">K-Drama Terbaru</h3>
+                        <p class="text-gray-600 text-sm">Drama Korea terpopuler dengan subtitle Indonesia</p>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-2xl overflow-hidden shadow-lg card-hover">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/60474617-31a8-4f6b-bc2b-ac5e07c81db4.png" alt="Chinese period drama poster featuring ancient Chinese warriors in traditional armor and palace backdrop" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="font-semibold text-lg mb-2">C-Drama Eksklusif</h3>
+                        <p class="text-gray-600 text-sm">Serial China terbaik dengan kualitas premium</p>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-2xl overflow-hidden shadow-lg card-hover">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/14393c5e-24c3-41b0-8dea-5a492a366cda.png" alt="Thai drama poster showing modern Thai actors in contemporary Bangkok cityscape setting" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="font-semibold text-lg mb-2">Thai Series</h3>
+                        <p class="text-gray-600 text-sm">Series Thailand dengan cerita yang menghibur</p>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-2xl overflow-hidden shadow-lg card-hover">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/44426176-39e5-421c-bfb1-a861992ede97.png" alt="Indonesian original series poster featuring diverse Indonesian cast in modern urban Jakarta setting" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="font-semibold text-lg mb-2">Original Series</h3>
+                        <p class="text-gray-600 text-sm">Konten original VIU yang tidak bisa ditonton di tempat lain</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-16 text-gray-800">
+                Paket Spesial Terbatas
+            </h2>
+            
+            <div class="max-w-4xl mx-auto">
+                <div class="bg-gradient-to-r from-purple-600 to-blue-600 rounded-3xl p-8 text-white relative overflow-hidden">
+                    <div class="absolute top-0 right-0 bg-red-500 text-white px-4 py-2 rounded-bl-2xl font-semibold">
+                        PROMO TERBATAS!
+                    </div>
+                    
+                    <div class="grid md:grid-cols-2 gap-8 items-center">
+                        <div>
+                            <h3 class="text-3xl font-bold mb-4">VIU Premium 3 Bulan</h3>
+                            <ul class="space-y-3 mb-6">
+                                <li class="flex items-center">
+                                    <i class="fas fa-check-circle text-green-400 mr-3"></i>
+                                    <span>Akses semua konten premium</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-check-circle text-green-400 mr-3"></i>
+                                    <span>Streaming tanpa iklan</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-check-circle text-green-400 mr-3"></i>
+                                    <span>Download untuk nonton offline</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-check-circle text-green-400 mr-3"></i>
+                                    <span>Kualitas video HD</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-check-circle text-green-400 mr-3"></i>
+                                    <span>Garansi 100% uang kembali</span>
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <div class="text-center">
+                            <div class="text-6xl font-bold mb-2">Rp 20.000</div>
+                            <div class="text-xl mb-4">3 Bulan Premium</div>
+                            <div class="text-sm opacity-80 line-through mb-6">Harga Normal: Rp 89.000</div>
+                            <div class="bg-green-500 text-white px-6 py-3 rounded-full text-lg font-semibold mb-4">
+                                HEMAT 77%
+                            </div>
+                            <a href="https://wa.me/6283874636450?text=Halo%20saya%20tertarik%20dengan%20VIU%20Premium%203%20bulan%20seharga%2020.000" 
+                               class="bg-white text-purple-600 px-8 py-4 rounded-full text-lg font-semibold hover:bg-gray-100 transition-all duration-300 inline-block">
+                                <i class="fab fa-whatsapp mr-2"></i>
+                                Pesan Sekarang
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Guarantee Section -->
+    <section class="py-20 bg-gradient-to-r from-green-400 to-blue-500 text-white">
+        <div class="container mx-auto px-4 text-center">
+            <div class="max-w-4xl mx-auto">
+                <i class="fas fa-shield-alt text-6xl mb-6"></i>
+                <h2 class="text-4xl font-bold mb-6">Garansi 100% Uang Kembali</h2>
+                <p class="text-xl mb-8">
+                    Kami berkomitmen memberikan layanan terbaik. Jika Anda tidak puas dalam 7 hari pertama, 
+                    kami akan mengembalikan uang Anda 100% tanpa pertanyaan.
+                </p>
+                <div class="grid md:grid-cols-3 gap-6 mt-12">
+                    <div class="text-center">
+                        <i class="fas fa-clock text-3xl mb-4"></i>
+                        <h3 class="text-xl font-semibold mb-2">Proses Cepat</h3>
+                        <p>Aktivasi akun dalam 5 menit setelah pembayaran</p>
+                    </div>
+                    <div class="text-center">
+                        <i class="fas fa-headset text-3xl mb-4"></i>
+                        <h3 class="text-xl font-semibold mb-2">Support 24/7</h3>
+                        <p>Tim customer service siap membantu kapan saja</p>
+                    </div>
+                    <div class="text-center">
+                        <i class="fas fa-lock text-3xl mb-4"></i>
+                        <h3 class="text-xl font-semibold mb-2">Transaksi Aman</h3>
+                        <p>Pembayaran dijamin aman dengan enkripsi SSL</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-16 text-gray-800">
+                Pertanyaan yang Sering Diajukan
+            </h2>
+            
+            <div class="max-w-4xl mx-auto">
+                <div class="space-y-6">
+                    <div class="bg-gray-50 rounded-2xl p-6">
+                        <h3 class="text-xl font-semibold mb-3 text-gray-800">Bagaimana cara pembayaran?</h3>
+                        <p class="text-gray-600">Pembayaran dapat dilakukan melalui transfer bank, e-wallet (OVO, DANA, GoPay), atau pulsa. Setelah pembayaran konfirmasi, akun akan diaktifkan dalam 5 menit.</p>
+                    </div>
+                    
+                    <div class="bg-gray-50 rounded-2xl p-6">
+                        <h3 class="text-xl font-semibold mb-3 text-gray-800">Apakah akun aman dan legal?</h3>
+                        <p class="text-gray-600">Ya, semua akun yang kami berikan adalah akun resmi VIU Premium dengan metode pembayaran yang legal dan aman.</p>
+                    </div>
+                    
+                    <div class="bg-gray-50 rounded-2xl p-6">
+                        <h3 class="text-xl font-semibold mb-3 text-gray-800">Berapa lama masa aktif?</h3>
+                        <p class="text-gray-600">Akun VIU Premium akan aktif selama 3 bulan penuh (90 hari) sejak tanggal aktivasi.</p>
+                    </div>
+                    
+                    <div class="bg-gray-50 rounded-2xl p-6">
+                        <h3 class="text-xl font-semibold mb-3 text-gray-800">Bagaimana jika akun bermasalah?</h3>
+                        <p class="text-gray-600">Kami memberikan garansi 100% selama masa aktif. Jika akun bermasalah, kami akan memberikan akun pengganti atau refund.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-gradient-to-r from-purple-600 to-blue-600 text-white">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-4xl font-bold mb-6">Jangan Lewatkan Kesempatan Emas Ini!</h2>
+            <p class="text-xl mb-8">Promo terbatas hanya untuk 100 pembelian pertama. Buruan pesan sebelum kehabisan!</p>
+            
+            <div class="flex flex-col sm:flex-row gap-4 justify-center mb-8">
+                <a href="https://wa.me/6283874636450?text=Halo%20saya%20tertarik%20dengan%20VIU%20Premium%203%20bulan%20seharga%2020.000" 
+                   class="bg-green-500 hover:bg-green-600 text-white px-8 py-4 rounded-full text-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-xl">
+                    <i class="fab fa-whatsapp mr-2"></i>
+                    Pesan via WhatsApp
+                </a>
+                <a href="tel:+6283874636450" 
+                   class="bg-white text-purple-600 px-8 py-4 rounded-full text-lg font-semibold hover:bg-gray-100 transition-all duration-300">
+                    <i class="fas fa-phone mr-2"></i>
+                    Hubungi Langsung
+                </a>
+            </div>
+            
+            <div class="text-sm opacity-80">
+                <i class="fas fa-clock mr-2"></i>
+                Promo berakhir dalam waktu terbatas!
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-2xl font-bold mb-4">VIU Premium</h3>
+                    <p class="text-gray-400">Streaming service terbaik dengan konten premium terlengkap di Indonesia.</p>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Kontak</h4>
+                    <div class="space-y-2 text-gray-400">
+                        <p><i class="fab fa-whatsapp mr-2"></i> +62 838-7463-6450</p>
+                        <p><i class="fas fa-envelope mr-2"></i> info@viupremium.com</p>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Layanan</h4>
+                    <div class="space-y-2 text-gray-400">
+                        <p>VIU Premium</p>
+                        <p>Customer Support</p>
+                        <p>Refund Policy</p>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Jam Operasional</h4>
+                    <div class="space-y-2 text-gray-400">
+                        <p>Senin - Minggu</p>
+                        <p>08.00 - 22.00 WIB</p>
+                        <p>Respon cepat via WhatsApp</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                <p>© 2025 VIU Premium by andri14<p>
+                </p> All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling
+        function scrollToFeatures() {
+            document.getElementById('features').scrollIntoView({
+                behavior: 'smooth'
+            });
+        }
+
+        // Animate on scroll
+        function handleScroll() {
+            const elements = document.querySelectorAll('.fade-in');
+            elements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const elementVisible = 150;
+                
+                if (elementTop < window.innerHeight - elementVisible) {
+                    element.classList.add('animate-fade-in');
+                }
+            });
+        }
+
+        // Add scroll event listener
+        window.addEventListener('scroll', handleScroll);
+
+        // Counter animation for price
+        function animatePrice() {
+            const priceElement = document.querySelector('.price-badge .text-6xl');
+            if (priceElement) {
+                let currentPrice = 0;
+                const targetPrice = 20000;
+                const increment = targetPrice / 50;
+                
+                const counter = setInterval(() => {
+                    currentPrice += increment;
+                    if (currentPrice >= targetPrice) {
+                        currentPrice = targetPrice;
+                        clearInterval(counter);
+                    }
+                    priceElement.textContent = 'Rp ' + Math.floor(currentPrice).toLocaleString('id-ID');
+                }, 50);
+            }
+        }
+
+        // Initialize animations
+        document.addEventListener('DOMContentLoaded', function() {
+            handleScroll();
+            
+            // Animate price on page load
+            setTimeout(animatePrice, 1000);
+            
+            // Add click tracking for WhatsApp buttons
+            const waButtons = document.querySelectorAll('a[href*="wa.me"]');
+            waButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    console.log('WhatsApp button clicked');
+                    // You can add analytics tracking here
+                });
+            });
+        });
+
+        // Add floating animation to hero elements
+        setInterval(() => {
+            const floatingElements = document.querySelectorAll('.floating');
+            floatingElements.forEach(element => {
+                element.style.transform = `translateY(${Math.sin(Date.now() * 0.001) * 10}px)`;
+            });
+        }, 100);
+    </script>
+</body>
+</html>
+
